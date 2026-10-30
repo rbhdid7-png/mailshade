@@ -1,0 +1,69 @@
+html.mdm-on[data-mdm-site="outlook"] body,
+html.mdm-on[data-mdm-site="outlook"] #app,
+html.mdm-on[data-mdm-site="outlook"] .ms-Fabric,
+html.mdm-on[data-mdm-site="outlook"] .customScrollBar,
+html.mdm-on[data-mdm-site="outlook"] [role="main"],
+html.mdm-on[data-mdm-site="outlook"] [role="navigation"] {
+  background-color: var(--mdm-bg) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"] .ms-Nav,
+html.mdm-on[data-mdm-site="outlook"] .splitPrimaryColumn,
+html.mdm-on[data-mdm-site="outlook"] .wide-content-host,
+html.mdm-on[data-mdm-site="outlook"] [data-app-section="MessageList"] {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"] [role="option"],
+html.mdm-on[data-mdm-site="outlook"] [role="listitem"],
+html.mdm-on[data-mdm-site="outlook"] .ms-List-cell {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-bottom: 1px solid var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"] [aria-selected="true"],
+html.mdm-on[data-mdm-site="outlook"] [role="option"]:hover,
+html.mdm-on[data-mdm-site="outlook"] .ms-List-cell:hover {
+  background-color: var(--mdm-hover) !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"] .ms-Button,
+html.mdm-on[data-mdm-site="outlook"] .ms-CommandBar,
+html.mdm-on[data-mdm-site="outlook"] .ms-SearchBox,
+html.mdm-on[data-mdm-site="outlook"] input[type="search"],
+html.mdm-on[data-mdm-site="outlook"] input[type="text"] {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"] .ms-Button--primary {
+  background-color: var(--mdm-compose) !important;
+  color: var(--mdm-compose-text) !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"] .ReadingPaneContents,
+html.mdm-on[data-mdm-site="outlook"] [aria-label="Message body"] {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"][data-mdm-bodies="off"] [aria-label="Message body"],
+html.mdm-on[data-mdm-site="outlook"][data-mdm-bodies="off"] .itemBody {
+  background-color: #fff !important;
+  color: #202124 !important;
+}
+
+html.mdm-on[data-mdm-site="outlook"] .ms-Callout,
+html.mdm-on[data-mdm-site="outlook"] .ms-ContextualMenu,
+html.mdm-on[data-mdm-site="outlook"] .ms-Dialog-main,
+html.mdm-on[data-mdm-site="outlook"] .ms-Panel-main {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+  box-shadow: 0 8px 24px var(--mdm-shadow) !important;
+}

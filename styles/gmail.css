@@ -1,0 +1,257 @@
+html.mdm-on[data-mdm-site="gmail"] {
+  background-color: var(--mdm-bg) !important;
+  --gm3-sys-color-background: var(--mdm-bg);
+  --gm3-sys-color-surface: var(--mdm-bg);
+  --gm3-sys-color-surface-container: var(--mdm-surface);
+  --gm3-sys-color-surface-container-low: var(--mdm-bg-2);
+  --gm3-sys-color-surface-container-high: var(--mdm-surface-2);
+  --gm3-sys-color-surface-container-highest: var(--mdm-surface-2);
+  --gm3-sys-color-surface-container-lowest: var(--mdm-bg);
+  --gm3-sys-color-surface-bright: var(--mdm-surface-2);
+  --gm3-sys-color-surface-dim: var(--mdm-bg);
+  --gm3-sys-color-surface-tint: var(--mdm-surface);
+  --gm3-sys-color-on-surface: var(--mdm-text);
+  --gm3-sys-color-on-surface-variant: var(--mdm-muted);
+  --gm3-sys-color-outline: var(--mdm-border);
+  --gm3-sys-color-outline-variant: var(--mdm-border);
+  --gm3-sys-color-primary: var(--mdm-link);
+  --dt-surface: var(--mdm-bg);
+  --dt-background: var(--mdm-bg);
+  --dt-on-surface: var(--mdm-text);
+  --dt-onbackground: var(--mdm-text);
+  --text-color: var(--mdm-text);
+}
+
+html.mdm-on[data-mdm-site="gmail"] body {
+  background-color: var(--mdm-bg) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .nH,
+html.mdm-on[data-mdm-site="gmail"] .aeN,
+html.mdm-on[data-mdm-site="gmail"] .aeJ,
+html.mdm-on[data-mdm-site="gmail"] .AO,
+html.mdm-on[data-mdm-site="gmail"] .Tm,
+html.mdm-on[data-mdm-site="gmail"] .aeF,
+html.mdm-on[data-mdm-site="gmail"] .aeG,
+html.mdm-on[data-mdm-site="gmail"] .bkK,
+html.mdm-on[data-mdm-site="gmail"] .aAU,
+html.mdm-on[data-mdm-site="gmail"] .bhZ,
+html.mdm-on[data-mdm-site="gmail"] .aeN.WR,
+html.mdm-on[data-mdm-site="gmail"] .nH.oy8Mbf,
+html.mdm-on[data-mdm-site="gmail"] .aeH,
+html.mdm-on[data-mdm-site="gmail"] .G-atb,
+html.mdm-on[data-mdm-site="gmail"] .D.E {
+  background-color: var(--mdm-bg) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] header,
+html.mdm-on[data-mdm-site="gmail"] header[role="banner"],
+html.mdm-on[data-mdm-site="gmail"] .gb_Td,
+html.mdm-on[data-mdm-site="gmail"] .gb_Nc,
+html.mdm-on[data-mdm-site="gmail"] .gb_xd,
+html.mdm-on[data-mdm-site="gmail"] .gb_Ec,
+html.mdm-on[data-mdm-site="gmail"] .gb_Mc,
+html.mdm-on[data-mdm-site="gmail"] .gb_3d,
+html.mdm-on[data-mdm-site="gmail"] .gb_4d,
+html.mdm-on[data-mdm-site="gmail"] .gb_Od,
+html.mdm-on[data-mdm-site="gmail"] .gb_B,
+html.mdm-on[data-mdm-site="gmail"] .gb_nd,
+html.mdm-on[data-mdm-site="gmail"] .gb_pd,
+html.mdm-on[data-mdm-site="gmail"] .gb_Rd {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+  box-shadow: none !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] form[role="search"],
+html.mdm-on[data-mdm-site="gmail"] input[aria-label="Search mail"],
+html.mdm-on[data-mdm-site="gmail"] input[aria-label="Search in mail"],
+html.mdm-on[data-mdm-site="gmail"] .gb_Xe,
+html.mdm-on[data-mdm-site="gmail"] .gb_Ue,
+html.mdm-on[data-mdm-site="gmail"] .gb_Df,
+html.mdm-on[data-mdm-site="gmail"] .aog,
+html.mdm-on[data-mdm-site="gmail"] .gssb_c,
+html.mdm-on[data-mdm-site="gmail"] .aaw,
+html.mdm-on[data-mdm-site="gmail"] .aQl,
+html.mdm-on[data-mdm-site="gmail"] .aQw {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+  box-shadow: none !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .zA,
+html.mdm-on[data-mdm-site="gmail"] .yO,
+html.mdm-on[data-mdm-site="gmail"] tr.zA {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-bottom: 1px solid var(--mdm-border) !important;
+  box-shadow: none !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .zE {
+  background-color: var(--mdm-unread) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .zA:hover,
+html.mdm-on[data-mdm-site="gmail"] .yO:hover,
+html.mdm-on[data-mdm-site="gmail"] .zE:hover {
+  background-color: var(--mdm-hover) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .x7 {
+  background-color: var(--mdm-selected) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .yW,
+html.mdm-on[data-mdm-site="gmail"] .xY,
+html.mdm-on[data-mdm-site="gmail"] .xS,
+html.mdm-on[data-mdm-site="gmail"] .bog,
+html.mdm-on[data-mdm-site="gmail"] .bqe,
+html.mdm-on[data-mdm-site="gmail"] span.yP,
+html.mdm-on[data-mdm-site="gmail"] span.zF,
+html.mdm-on[data-mdm-site="gmail"] .bA4 {
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .y2,
+html.mdm-on[data-mdm-site="gmail"] .g6,
+html.mdm-on[data-mdm-site="gmail"] .g3 {
+  color: var(--mdm-muted) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .TO,
+html.mdm-on[data-mdm-site="gmail"] .nZ,
+html.mdm-on[data-mdm-site="gmail"] .aim,
+html.mdm-on[data-mdm-site="gmail"] .TN,
+html.mdm-on[data-mdm-site="gmail"] .TK,
+html.mdm-on[data-mdm-site="gmail"] .wT,
+html.mdm-on[data-mdm-site="gmail"] .ajl,
+html.mdm-on[data-mdm-site="gmail"] .bym,
+html.mdm-on[data-mdm-site="gmail"] .aKz {
+  background-color: var(--mdm-bg) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .TO:hover,
+html.mdm-on[data-mdm-site="gmail"] .nZ.aS2,
+html.mdm-on[data-mdm-site="gmail"] .ain,
+html.mdm-on[data-mdm-site="gmail"] .aAv {
+  background-color: var(--mdm-hover) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .n0,
+html.mdm-on[data-mdm-site="gmail"] .aio {
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .T-I,
+html.mdm-on[data-mdm-site="gmail"] .amD,
+html.mdm-on[data-mdm-site="gmail"] .G-atb .T-I-ax7 {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+  box-shadow: none !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .T-I-KE,
+html.mdm-on[data-mdm-site="gmail"] .z0 > .T-I {
+  background-color: var(--mdm-compose) !important;
+  color: var(--mdm-compose-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .if,
+html.mdm-on[data-mdm-site="gmail"] .iY,
+html.mdm-on[data-mdm-site="gmail"] .nH.if,
+html.mdm-on[data-mdm-site="gmail"] .ha,
+html.mdm-on[data-mdm-site="gmail"] .h7,
+html.mdm-on[data-mdm-site="gmail"] .kv,
+html.mdm-on[data-mdm-site="gmail"] .gE,
+html.mdm-on[data-mdm-site="gmail"] .ads,
+html.mdm-on[data-mdm-site="gmail"] .gs,
+html.mdm-on[data-mdm-site="gmail"] .Bu {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .hP,
+html.mdm-on[data-mdm-site="gmail"] .ha h2,
+html.mdm-on[data-mdm-site="gmail"] .gD,
+html.mdm-on[data-mdm-site="gmail"] .go {
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"][data-mdm-bodies="on"] .a3s,
+html.mdm-on[data-mdm-site="gmail"][data-mdm-bodies="on"] .ii {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"][data-mdm-bodies="off"] .a3s,
+html.mdm-on[data-mdm-site="gmail"][data-mdm-bodies="off"] .ii {
+  background-color: #fff !important;
+  color: #202124 !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .M9,
+html.mdm-on[data-mdm-site="gmail"] .aoP,
+html.mdm-on[data-mdm-site="gmail"] .AD,
+html.mdm-on[data-mdm-site="gmail"] .I5,
+html.mdm-on[data-mdm-site="gmail"] .aoI,
+html.mdm-on[data-mdm-site="gmail"] .aoT,
+html.mdm-on[data-mdm-site="gmail"] .az9,
+html.mdm-on[data-mdm-site="gmail"] .oL,
+html.mdm-on[data-mdm-site="gmail"] .aC3,
+html.mdm-on[data-mdm-site="gmail"] .Am,
+html.mdm-on[data-mdm-site="gmail"] .LW-avf {
+  background-color: var(--mdm-surface-2) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .J-M,
+html.mdm-on[data-mdm-site="gmail"] .J-N,
+html.mdm-on[data-mdm-site="gmail"] .SK,
+html.mdm-on[data-mdm-site="gmail"] .aXjCH,
+html.mdm-on[data-mdm-site="gmail"] .bAw,
+html.mdm-on[data-mdm-site="gmail"] .aSt {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+  box-shadow: 0 8px 24px var(--mdm-shadow) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .J-N:hover,
+html.mdm-on[data-mdm-site="gmail"] .J-Ks-KO {
+  background-color: var(--mdm-hover) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .brC-aT5-aOt-Jw,
+html.mdm-on[data-mdm-site="gmail"] .bq9,
+html.mdm-on[data-mdm-site="gmail"] .brC {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .aRs,
+html.mdm-on[data-mdm-site="gmail"] .aKh,
+html.mdm-on[data-mdm-site="gmail"] .aKj {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="gmail"] .a3s img,
+html.mdm-on[data-mdm-site="gmail"] .ii img,
+html.mdm-on[data-mdm-site="gmail"] img.ajn,
+html.mdm-on[data-mdm-site="gmail"] .gbii,
+html.mdm-on[data-mdm-site="gmail"] .gbip {
+  filter: none !important;
+  background: transparent !important;
+}

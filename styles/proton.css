@@ -1,0 +1,57 @@
+html.mdm-on[data-mdm-site="proton"] body,
+html.mdm-on[data-mdm-site="proton"] #root,
+html.mdm-on[data-mdm-site="proton"] .content,
+html.mdm-on[data-mdm-site="proton"] .main,
+html.mdm-on[data-mdm-site="proton"] .main-area {
+  background-color: var(--mdm-bg) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="proton"] .sidebar,
+html.mdm-on[data-mdm-site="proton"] .toolbar,
+html.mdm-on[data-mdm-site="proton"] header,
+html.mdm-on[data-mdm-site="proton"] nav {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="proton"] .item-container,
+html.mdm-on[data-mdm-site="proton"] [data-shortcut-target="item-container"] {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="proton"] .item-container:hover,
+html.mdm-on[data-mdm-site="proton"] .item-is-selected {
+  background-color: var(--mdm-hover) !important;
+}
+
+html.mdm-on[data-mdm-site="proton"] .item-is-unread {
+  background-color: var(--mdm-unread) !important;
+}
+
+html.mdm-on[data-mdm-site="proton"] input,
+html.mdm-on[data-mdm-site="proton"] textarea,
+html.mdm-on[data-mdm-site="proton"] .button,
+html.mdm-on[data-mdm-site="proton"] .searchbox-field {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="proton"] .button-solid-norm,
+html.mdm-on[data-mdm-site="proton"] .composer-send-button {
+  background-color: var(--mdm-compose) !important;
+  color: var(--mdm-compose-text) !important;
+}
+
+html.mdm-on[data-mdm-site="proton"] .message-content,
+html.mdm-on[data-mdm-site="proton"] .composer,
+html.mdm-on[data-mdm-site="proton"] .dropdown,
+html.mdm-on[data-mdm-site="proton"] .dropdown-content {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}

@@ -1,0 +1,49 @@
+html.mdm-on[data-mdm-site="yahoo"] body,
+html.mdm-on[data-mdm-site="yahoo"] #mail-app-component,
+html.mdm-on[data-mdm-site="yahoo"] #app,
+html.mdm-on[data-mdm-site="aol"] body,
+html.mdm-on[data-mdm-site="aol"] #app {
+  background-color: var(--mdm-bg) !important;
+  color: var(--mdm-text) !important;
+}
+
+html.mdm-on[data-mdm-site="yahoo"] header,
+html.mdm-on[data-mdm-site="yahoo"] nav,
+html.mdm-on[data-mdm-site="yahoo"] aside,
+html.mdm-on[data-mdm-site="yahoo"] [role="navigation"],
+html.mdm-on[data-mdm-site="yahoo"] [role="banner"],
+html.mdm-on[data-mdm-site="aol"] header,
+html.mdm-on[data-mdm-site="aol"] nav,
+html.mdm-on[data-mdm-site="aol"] aside {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="yahoo"] [role="listitem"],
+html.mdm-on[data-mdm-site="aol"] [role="listitem"] {
+  background-color: var(--mdm-bg-2) !important;
+  color: var(--mdm-text) !important;
+  border-bottom: 1px solid var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="yahoo"] [role="listitem"]:hover,
+html.mdm-on[data-mdm-site="aol"] [role="listitem"]:hover {
+  background-color: var(--mdm-hover) !important;
+}
+
+html.mdm-on[data-mdm-site="yahoo"] input,
+html.mdm-on[data-mdm-site="yahoo"] textarea,
+html.mdm-on[data-mdm-site="yahoo"] button,
+html.mdm-on[data-mdm-site="aol"] input,
+html.mdm-on[data-mdm-site="aol"] button {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+  border-color: var(--mdm-border) !important;
+}
+
+html.mdm-on[data-mdm-site="yahoo"] [role="main"],
+html.mdm-on[data-mdm-site="aol"] [role="main"] {
+  background-color: var(--mdm-surface) !important;
+  color: var(--mdm-text) !important;
+}

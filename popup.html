@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mailshade</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="#222527"/>
+          <path d="M5.5 8.2h13v8.2H5.5z" stroke="#8ab4f8" stroke-width="1.6"/>
+          <path d="M5.5 8.2L12 13l6.5-4.8" stroke="#8ab4f8" stroke-width="1.6"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Mailshade</h1>
+        <p id="siteLabel" class="subtitle">Checking tab...</p>
+      </div>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="masterToggle" aria-label="Enable dark mode" />
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <p id="status" class="status" role="status"></p>
+
+  <section class="card" id="unsupported" hidden>
+    <p>Open Gmail, Outlook, Yahoo, Proton, iCloud, AOL, or Zoho Mail to apply dark mode.</p>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <span id="siteToggleLabel">Enabled on this site</span>
+      <label class="switch compact">
+        <input type="checkbox" id="siteToggle" aria-labelledby="siteToggleLabel" />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="row">
+      <span id="sessionToggleLabel">Disable for this session</span>
+      <label class="switch compact">
+        <input type="checkbox" id="sessionToggle" aria-labelledby="sessionToggleLabel" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 id="themeHeading">Theme</h2>
+    <div class="themes" id="themes" role="group" aria-labelledby="themeHeading">
+      <button class="theme" data-theme="comfort" type="button" aria-pressed="false">
+        <span class="swatch comfort"></span>
+        Comfort Dark
+      </button>
+      <button class="theme" data-theme="oled" type="button" aria-pressed="false">
+        <span class="swatch oled"></span>
+        OLED Black
+      </button>
+      <button class="theme" data-theme="original" type="button" aria-pressed="false">
+        <span class="swatch original"></span>
+        Original
+      </button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <span id="bodiesLabel">Darken email bodies</span>
+      <label class="switch compact">
+        <input type="checkbox" id="darkenBodies" aria-labelledby="bodiesLabel" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </section>
+
+  <footer>
+    <button type="button" id="resetBtn">Reset</button>
+    <span class="hint">Reload the mail tab if chrome looks stuck.</span>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>
