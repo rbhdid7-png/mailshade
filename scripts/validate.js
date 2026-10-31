@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { spawnSync } = require("child_process");
 const { run: runContrast } = require("./contrast");
 
 const ROOT = path.join(__dirname, "..");
@@ -45,6 +46,7 @@ function same(a, b) {
 
 function checkFiles(manifest, label) {
   const required = [
+    "shared.js",
     "background.js",
     "content.js",
     "popup.html",
@@ -97,6 +99,14 @@ function checkFirefox(manifest) {
   } else {
     ok(`firefox: gecko id ${manifest.browser_specific_settings.gecko.id}`);
   }
+  const collection = manifest.browser_specific_settings &&
+    manifest.browser_specific_settings.gecko &&
+    manifest.browser_specific_settings.gecko.data_collection_permissions;
+  if (!collection || !Array.isArray(collection.required) || !collection.required.includes("none")) {
+    fail("firefox: gecko data_collection_permissions.required must include none");
+  } else {
+    ok("firefox: data_collection_permissions none");
+  }
 }
 
 function checkChrome(manifest) {
@@ -126,6 +136,22 @@ function checkRootMatchesFirefox(root, firefox) {
   }
 }
 
+function checkSharedWiring(manifest, label) {
+  if (!manifest) return;
+  const scripts = (manifest.content_scripts || []).map((entry) => entry.js || []);
+  for (const js of scripts) {
+    if (js[0] !== "shared.js" || js[1] !== "content.js") {
+      fail(`${label}: content_scripts must load shared.js before content.js`);
+    }
+  }
+  if (manifest.background && manifest.background.scripts) {
+    const bg = manifest.background.scripts;
+    if (bg[0] !== "shared.js" || !bg.includes("background.js")) {
+      fail(`${label}: background.scripts must load shared.js before background.js`);
+    }
+  }
+}
+
 function checkFixture() {
   const fixture = path.join(ROOT, "tests", "fixtures", "gmail.html");
   if (!fs.existsSync(fixture)) {
@@ -149,6 +175,9 @@ function main() {
   checkRootMatchesFirefox(root, firefox);
   checkFiles(firefox, "firefox");
   checkFiles(chrome, "chrome");
+  checkSharedWiring(firefox, "firefox");
+  checkSharedWiring(chrome, "chrome");
+  checkSharedWiring(root, "root");
   for (const icon of ["icons/icon16.png", "icons/icon32.png", "icons/icon48.png", "icons/icon128.png"]) {
     checkPng(icon);
   }
@@ -165,7 +194,17 @@ function main() {
   if (firefox && root && same(root.host_permissions, firefox.host_permissions)) {
     ok("root host_permissions match firefox");
   }
+  const popupHtml = fs.readFileSync(path.join(ROOT, "popup.html"), "utf8");
+  if (!popupHtml.includes('src="shared.js"') || !popupHtml.includes('src="popup.js"')) {
+    fail("popup.html must load shared.js before popup.js");
+  } else {
+    ok("popup.html loads shared.js");
+  }
   checkFixture();
+  const logic = spawnSync(process.execPath, [path.join(ROOT, "scripts", "test.js")], { encoding: "utf8" });
+  process.stdout.write(logic.stdout || "");
+  process.stderr.write(logic.stderr || "");
+  if (logic.status !== 0) fail("shared logic tests failed");
 
   const { results, failures } = runContrast();
   ok(`contrast pairs checked: ${results.length}`);

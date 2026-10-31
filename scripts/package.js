@@ -6,6 +6,7 @@ const ROOT = path.join(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
 
 const SHARED = [
+  "shared.js",
   "background.js",
   "content.js",
   "popup.html",
@@ -71,6 +72,7 @@ function verifyZip(zipPath, browser) {
   const names = listZip(zipPath);
   const required = [
     "manifest.json",
+    "shared.js",
     "background.js",
     "content.js",
     "popup.html",

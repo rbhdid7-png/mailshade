@@ -41,7 +41,7 @@
   "content_scripts": [
     {
       "matches": ["https://mail.google.com/*", "https://inbox.google.com/*"],
-      "js": ["content.js"],
+      "js": ["shared.js", "content.js"],
       "css": ["styles/base.css", "styles/gmail.css"],
       "run_at": "document_start"
     },
@@ -51,7 +51,7 @@
         "https://outlook.office.com/*",
         "https://outlook.office365.com/*"
       ],
-      "js": ["content.js"],
+      "js": ["shared.js", "content.js"],
       "css": ["styles/base.css", "styles/outlook.css"],
       "run_at": "document_start"
     },
@@ -61,19 +61,19 @@
         "https://*.mail.yahoo.com/*",
         "https://mail.aol.com/*"
       ],
-      "js": ["content.js"],
+      "js": ["shared.js", "content.js"],
       "css": ["styles/base.css", "styles/yahoo.css"],
       "run_at": "document_start"
     },
     {
       "matches": ["https://mail.proton.me/*", "https://mail.protonmail.com/*"],
-      "js": ["content.js"],
+      "js": ["shared.js", "content.js"],
       "css": ["styles/base.css", "styles/proton.css"],
       "run_at": "document_start"
     },
     {
       "matches": ["https://www.icloud.com/*", "https://mail.zoho.com/*"],
-      "js": ["content.js"],
+      "js": ["shared.js", "content.js"],
       "css": ["styles/base.css", "styles/generic.css"],
       "run_at": "document_start"
     }

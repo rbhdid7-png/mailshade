@@ -1,30 +1,5 @@
 const api = globalThis.browser || globalThis.chrome;
 
-const DEFAULTS = {
-  enabled: true,
-  theme: "comfort",
-  darkenBodies: true,
-  sites: {
-    gmail: true,
-    outlook: true,
-    yahoo: true,
-    proton: true,
-    icloud: true,
-    aol: true,
-    zoho: true
-  }
-};
-
-const SITE_MAP = [
-  { id: "gmail", label: "Gmail", match: /mail\.google\.com|inbox\.google\.com/ },
-  { id: "outlook", label: "Outlook", match: /outlook\.(live|office|office365)\.com/ },
-  { id: "yahoo", label: "Yahoo Mail", match: /mail\.yahoo\.com/ },
-  { id: "proton", label: "Proton Mail", match: /mail\.proton(\.me|mail\.com)/ },
-  { id: "icloud", label: "iCloud Mail", match: /icloud\.com/ },
-  { id: "aol", label: "AOL Mail", match: /mail\.aol\.com/ },
-  { id: "zoho", label: "Zoho Mail", match: /zoho\.com/ }
-];
-
 const els = {
   master: document.getElementById("masterToggle"),
   site: document.getElementById("siteToggle"),
@@ -36,27 +11,9 @@ const els = {
   status: document.getElementById("status")
 };
 
-let settings = JSON.parse(JSON.stringify(DEFAULTS));
+let settings = mailshadeNormalize({});
 let sessionOff = false;
 let currentSite = null;
-
-function detectSite(url) {
-  if (!url) return null;
-  return SITE_MAP.find((s) => s.match.test(url)) || null;
-}
-
-function normalize(raw) {
-  const source = (raw && (raw.mailshade || raw.mailDarkMode)) || raw || {};
-  let theme = source.theme || DEFAULTS.theme;
-  if (theme === "midnight" || theme === "dim") theme = "comfort";
-  if (theme !== "comfort" && theme !== "oled" && theme !== "original") theme = "comfort";
-  return {
-    enabled: source.enabled !== false,
-    theme,
-    darkenBodies: source.darkenBodies !== false,
-    sites: { ...DEFAULTS.sites, ...(source.sites || {}) }
-  };
-}
 
 async function getSessionOff() {
   if (!api.storage.session) return false;
@@ -73,13 +30,23 @@ async function setSessionOff(value) {
 
 async function loadSettings() {
   const stored = await api.storage.local.get(["mailshade", "mailDarkMode"]);
-  settings = normalize(stored);
+  settings = mailshadeNormalize(stored);
   sessionOff = await getSessionOff();
+}
+
+async function getActiveTab() {
+  if (!api.tabs || !api.tabs.query) return null;
+  try {
+    const tabs = await api.tabs.query({ active: true, currentWindow: true });
+    return (tabs && tabs[0]) || null;
+  } catch (_err) {
+    return null;
+  }
 }
 
 async function saveSettings() {
   await api.storage.local.set({ mailshade: settings });
-  const [tab] = await api.tabs.query({ active: true, currentWindow: true });
+  const tab = await getActiveTab();
   if (tab && tab.id) {
     try {
       await api.tabs.sendMessage(tab.id, {
@@ -163,7 +130,7 @@ document.getElementById("themes").addEventListener("click", async (e) => {
 });
 
 els.resetBtn.addEventListener("click", async () => {
-  settings = JSON.parse(JSON.stringify(DEFAULTS));
+  settings = mailshadeNormalize({});
   await setSessionOff(false);
   render();
   await saveSettings();
@@ -172,7 +139,7 @@ els.resetBtn.addEventListener("click", async () => {
 
 (async () => {
   await loadSettings();
-  const [tab] = await api.tabs.query({ active: true, currentWindow: true });
-  currentSite = detectSite(tab && tab.url);
+  const tab = await getActiveTab();
+  currentSite = mailshadeDetectSite(tab && tab.url);
   render();
 })();

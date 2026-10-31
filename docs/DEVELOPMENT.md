@@ -6,6 +6,7 @@
 manifest.json              Firefox development manifest
 manifest.firefox.json      Firefox package source
 manifest.chrome.json       Chrome package source
+shared.js                  Settings normalize, site detect, on/off rules
 background.js              Defaults and settings fetch
 content.js                 Applies theme attributes on mail pages
 popup.html / popup.css / popup.js
@@ -18,6 +19,7 @@ styles/generic.css
 scripts/validate.js
 scripts/package.js
 scripts/contrast.js
+scripts/test.js
 tests/fixtures/gmail.html
 ```
 
@@ -25,6 +27,7 @@ tests/fixtures/gmail.html
 
 ```
 node scripts/validate.js
+node scripts/test.js
 node scripts/contrast.js
 node scripts/package.js
 ```
@@ -48,7 +51,7 @@ Firefox MV3 uses `background.scripts`. Chrome MV3 uses `background.service_worke
 
 Minimum versions in the manifests:
 
-- Firefox 109, because MV3 `background.scripts` is required
+- Firefox 140, because AMO now requires `data_collection_permissions` on new extensions
 - Chrome 116, because MV3 service workers and `storage.session` are used when present
 
 Those versions come from the APIs in this repo, not from live browser QA in this environment.
@@ -59,7 +62,9 @@ Safari on macOS is untested and unsupported.
 
 To try later you would need Xcode, `safari-web-extension-converter` or a manual `manifest.json` conversion, an Apple Developer account, signing, and notarization. Safari also differs on background pages, `browser.storage.session`, and host permission prompts. Do not claim Safari support until that work is done on a Mac.
 
-Automated checks in this repo are packaging and CSS-token tests. They do not load Firefox, Chrome, Brave, or live Gmail.
+Automated checks in this repo are packaging, shared-logic unit tests, CSS-token contrast checks, and `web-ext lint` when available. They do not prove live Gmail, Outlook, Yahoo, Proton, iCloud, AOL, or Zoho theming.
+
+Phone browsers and the Gmail app are unsupported. `gecko_android.strict_min_version` exists only so Firefox lint accepts `data_collection_permissions`; it is not Android support.
 
 ## Testing locally
 
@@ -68,3 +73,11 @@ Automated checks in this repo are packaging and CSS-token tests. They do not loa
 3. Toggle Comfort Dark, OLED Black, and Original in the popup.
 4. Reload the tab and confirm the chosen theme returns.
 5. Turn **Darken email bodies** off and open a message; the body should stay light while chrome stays dark.
+
+What this environment can and cannot prove:
+
+- `web-ext lint` on the Firefox package
+- Firefox ESR temporary add-on install via `web-ext run`
+- Chromium headless loading the Chrome package service worker
+- Computed colors on `tests/fixtures/gmail.html`
+- Not performed: live Gmail, Outlook, Yahoo, Proton, iCloud, AOL, Zoho, Brave UI, or phone browsers

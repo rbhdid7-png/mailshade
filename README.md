@@ -28,19 +28,28 @@ Gmail received the most selector work in this release. Other sites use lighter, 
 
 ## Browsers
 
-- Firefox 109+ (Manifest V3 `background.scripts`)
+- Firefox 140+ (Manifest V3 `background.scripts`)
 - Chrome 116+ (Manifest V3 service worker)
+- Brave and Edge: same Chrome package and load-unpacked steps
 
-Safari is not supported. See docs/DEVELOPMENT.md for the packaging and signing gap.
+Safari is not supported. Phone browsers and the Gmail app are not supported. See docs/DEVELOPMENT.md.
 
 ## Install
 
-Developer install:
+One repository. Two packaged manifests.
 
-- Firefox: docs/INSTALLATION.md
-- Chrome: docs/INSTALLATION.md
+- Firefox: load the root `manifest.json`, or unzip `mailshade-firefox.zip`. Steps: docs/INSTALLATION.md
+- Chrome / Brave / Edge: unzip `mailshade-chrome.zip` or load `dist/chrome`. Steps: docs/INSTALLATION.md
 
-Packaged zips are produced with `node scripts/package.js`.
+From source:
+
+```
+node scripts/validate.js
+node scripts/test.js
+node scripts/package.js
+```
+
+Do not load `manifest.chrome.json` in Firefox, and do not load the root Firefox `manifest.json` in Chrome.
 
 ## Privacy
 
