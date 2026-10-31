@@ -122,7 +122,7 @@ function render() {
 els.master.addEventListener("change", async () => {
   settings.enabled = els.master.checked;
   if (els.master.checked && settings.theme === "original") settings.theme = "comfort";
-  if (!els.master.checked) sessionOff = false;
+  if (!els.master.checked) await setSessionOff(false);
   render();
   await saveSettings();
   setStatus(settings.enabled ? "Dark mode on" : "Dark mode off");

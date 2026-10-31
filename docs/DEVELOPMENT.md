@@ -17,12 +17,15 @@ styles/proton.css
 styles/generic.css
 scripts/validate.js
 scripts/package.js
+scripts/contrast.js
+tests/fixtures/gmail.html
 ```
 
 ## Commands
 
 ```
 node scripts/validate.js
+node scripts/contrast.js
 node scripts/package.js
 ```
 
@@ -55,6 +58,8 @@ Those versions come from the APIs in this repo, not from live browser QA in this
 Safari on macOS is untested and unsupported.
 
 To try later you would need Xcode, `safari-web-extension-converter` or a manual `manifest.json` conversion, an Apple Developer account, signing, and notarization. Safari also differs on background pages, `browser.storage.session`, and host permission prompts. Do not claim Safari support until that work is done on a Mac.
+
+Automated checks in this repo are packaging and CSS-token tests. They do not load Firefox, Chrome, Brave, or live Gmail.
 
 ## Testing locally
 
